@@ -55,7 +55,7 @@ public class ItemGenerator : MonoBehaviour {
 
 	}
 
-	void generateItem( int itemPos ){
+	void generateItem( int pos ){
 	
 		//どのアイテムを出すのかランダムに設定
 		int num = Random.Range (1, 11);
@@ -66,7 +66,7 @@ public class ItemGenerator : MonoBehaviour {
 
 				//アイテムの種類を決める
 				GameObject cone = Instantiate (conePrefab) as GameObject;
-				cone.transform.position = new Vector3 (4 * j, cone.transform.position.y, itemPos) ;
+				cone.transform.position = new Vector3 (4 * j, cone.transform.position.y, pos) ;
 
 			}
 
@@ -85,13 +85,13 @@ public class ItemGenerator : MonoBehaviour {
 
 					//コインを生成
 					GameObject coin = Instantiate (coinPrefab) as GameObject;
-					coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, itemPos + offsetZ);
+					coin.transform.position = new Vector3 (posRange * j, coin.transform.position.y, pos + offsetZ);
 
 				} else if (7 <= item && item <= 9) {
 
 					//車を生成
 					GameObject car = Instantiate (carPrefab) as GameObject;
-					car.transform.position = new Vector3 (posRange * j, car.transform.position.y, itemPos + offsetZ);
+					car.transform.position = new Vector3 (posRange * j, car.transform.position.y, pos + offsetZ);
 				}
 
 			}
